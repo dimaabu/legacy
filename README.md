@@ -1,60 +1,63 @@
-# FoodDose
+# Project Name : LafLefne 
 
+## Team
+  - Deema AbuZahra
+  - Emad Aqel
+  - Noor Aldeen Ashqer 
+  - Qamar Jaradat
+  - Razan Abusamra
 
-It is an app that allows the user to find a certain meal and the restaurant that offers this meal and give users more details about the restaurant.
+## Table of Contents
 
+1. [About](#about)
+1. [Requirements](#requirements)
+1. [Development](#development)
+    1. [Installing Dependencies](#installing-dependencies)
+1. [Picture Documentation](#documentation)
 
-# User Stories
+## About
+Laflefne is local(Palestine) tour booking and viewing website.
 
-  -  As a user I can SignUp .
- - As a user I can  LogIn.
- - As a user I select food.
- - As a user I can see all the restaurants that offer the selected food  and      I can choose one of them.
- - As a user I can see the whole details about the selected restaurant.
- 
+## Requirements
 
+- Node v12.18.4
+- React v17.0.1
 
-# Technology
+## Development
 
-* Front-End : React 
-* Back-End : nodejs ,express, express route.
-* DataBase : MongogDB
-* Deployment : Heroku 
-* Authentication : JWT
-* Design : Material UI
+1. Fork the repo from github.
+2. Clone down your fork
+```
+git clone https://github.com/<user Name>/GreenField5
+```
+3. Move into the repo after its been cloned onto your machine.
+4. Follow the instructions in the 'Installing Dependencies' section.
 
+### Installing Dependencies
 
-# DataBase Schema
+1. Open terminal 1: From root directory to forntend directory:
+```
+cd frontend/
+```
+```
+npm install
+```
+```
+npm run build
+```
+2. Open terminal 2: From within the root directory:
+```
+npm install
+```
+```
+npm install -g nodemon
+```
+```
+npm start 
+```
+open your localhost:4000
 
-![Food3](https://user-images.githubusercontent.com/37650536/99709140-77a2e000-2aa7-11eb-89d9-8ae4612af358.png)
-
-
-# Structure
- - backend files 
- - frontend files 
- - README.md
- 
- 
-
-
-# How to run your project
-
--  Clone this repo (https://github.com/FoodDose/FoodDoseRepo.git)
-
--   Open your **terminal** .
-
--   Put in terminal : **npm install**.
- 
--   Then put in terminal : **npm start** to run the server.
-
-
-
-
-# Team
-
- - [Hala](https://github.com/shaima96/) 
- - [Kholoud](https://github.com/kholoudmohtaseb)
- - [Shaima’](https://github.com/shaima96/)
- - [Najwan](https://github.com/najwanqandeel)
+### Picture Documentation
+![Home Page](https://i.imgur.com/T6WHKg9.png)
 
 
