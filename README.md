@@ -1,4 +1,4 @@
-# Project Name : LafLefne 
+# Project Name : 
 
 ## Team
   - Deema AbuZahra
@@ -16,7 +16,7 @@
 1. [Picture Documentation](#documentation)
 
 ## About
-Laflefne is local(Palestine) tour booking and viewing website.
+
 
 ## Requirements
 
@@ -27,9 +27,7 @@ Laflefne is local(Palestine) tour booking and viewing website.
 
 1. Fork the repo from github.
 2. Clone down your fork
-```
-git clone https://github.com/<user Name>/GreenField5
-```
+/////////
 3. Move into the repo after its been cloned onto your machine.
 4. Follow the instructions in the 'Installing Dependencies' section.
 
@@ -58,6 +56,6 @@ npm start
 open your localhost:4000
 
 ### Picture Documentation
-![Home Page](https://i.imgur.com/T6WHKg9.png)
+
 
 

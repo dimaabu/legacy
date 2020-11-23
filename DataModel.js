@@ -10,9 +10,10 @@ db.on('error', console.error.bind(console, 'connection error'))
 db.once('open', function () {
     console.log('connection to db sucessful')
 })
+
 //Schemas
 let resturantSchema = mongoose.Schema({
-    
+
 })
 let userSchema = mongoose.Schema({
     id: { type: Number, unique: true, sparse: true },
@@ -25,9 +26,8 @@ let userSchema = mongoose.Schema({
     newsLetter: Boolean
 })
 
-// userSchema.index({ createdBy: 1, name: 1 }, { unique: true });
-let trips = mongoose.model("tripsinfo", resturantSchema);
-let users = mongoose.model("userinfo", userSchema);
+let trips = mongoose.model("resturInfo", resturantSchema);
+let users = mongoose.model("UserInfo", userSchema);
 
 
 module.exports.users = users

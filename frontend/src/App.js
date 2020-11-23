@@ -10,7 +10,6 @@ import Trips from './components/Homepage/Cards'
 import Login from './components/user/login'
 import Trip from './components/trips/trips'
 import Signup from './components/user/signup'
-import Payment from './components/payment/payment'
 import MyTrip from './components/trips/mytrips'
 import Profile from './components/user/Profile';
 import Navbar2 from './components/Homepage/Navbar-login';
@@ -98,16 +97,12 @@ class App extends React.Component {
         })
       })
     }
-    // console.log(this.state.userid)
-
   }
 
   paymentCheck() {
     console.log('payment method')
   }
-
   render() {
-
     const { islogin } = this.state
     let comp
     let nav
@@ -116,8 +111,6 @@ class App extends React.Component {
         path='/sign-up'
         render={(props) => <Signup toggleLogin={this.changeLogInStatus} />}
       />
-
-
     }
     else {
       comp = <Route
@@ -147,16 +140,11 @@ class App extends React.Component {
               path="/trips"
               render={(props) => <Trips userid={this.state.userid} getup={this.getup} testtrips={this.state.testtrips} paymentCheck={this.paymentCheck} lable1={this.state.hello} trip={this.state.thetrip} />}
             />
-            {/* <Route path="/" exact component={Home} /> */}
-            {/* <Route path="/trips" exact component={Trips} /> */}
             <Route path="/sign-up" exact component={Signup} />
             <Route path="/user" exact render={(props) => <Profile userid={this.state.userid} />}
             />
             <Route path="/trip" exact component={Trip} />
             <Route path="/mytrip" exact component={MyTrip} />
-
-            <Route path="/payment" exact component={Payment} />
-
           </Switch>
           <Footer />
         </Router>
