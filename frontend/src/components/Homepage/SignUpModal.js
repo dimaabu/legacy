@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 
 const Background = styled.div`
-  width: 100%;
+  width: 1000%;
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
   position: fixed;
@@ -28,20 +28,27 @@ const ModalWrapper = styled.div`
 
 const ModalContent = styled.div`
   display: flex;
-  ${'' /* flex-direction: row; */}
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  line-height: 1.8;
+  line-height: 1;
   color: #141414;
   p {
+    margin-top: 1rem;
     margin-bottom: 1rem;
+    font-size: large;
+    float: left;
   }
   button {
     padding: 10px 24px;
     background: #ff9900;
     color: #fff;
     border: none;
-    width: 200px;
+    width: 310px;
+  }
+  label{
+    font-size: large;
+    float: left;
   }
 `;
 
@@ -123,7 +130,7 @@ export const Modal2 = ({ showModal, setShowModal }) => {
 
                 <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
                 <p className="forgot-password text-right">
-                    Already registered <a href="#">sign in?</a>
+                    Already registered <a href=" ">sign in?</a>
                 </p>
             </form>
               </ModalContent>

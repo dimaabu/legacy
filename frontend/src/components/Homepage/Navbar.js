@@ -6,16 +6,8 @@ import './A-Style.css';
 
 function Navbar() {
     const [click, setClick] = useState(false);
-
-
     const handleClick = () => setClick(!click);
-
     const closeMobileMenu = () => setClick(false);
-
-
-
- 
-
     return (
         <>
             <nav className='navbar'>
@@ -28,19 +20,19 @@ function Navbar() {
                     </div>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
-                            <Link to='/restaurants' className='nav-links' onClick={closeMobileMenu}>Restaurants</Link>
+                            <Link to='/restaurants' className='nav-links' onClick={closeMobileMenu}>RESTURANTS</Link>
+                        </li>
+                        <li>
+                            <Link
+                                to='/user'
+                                className='nav-links-mobile'
+                                onClick={closeMobileMenu}>USER</Link>
                         </li>
                         <li>
                             <Link
                                 to='/sign-up'
                                 className='nav-links-mobile'
-                                onClick={closeMobileMenu}>Sign In</Link>
-                        </li>
-                        <li>
-                            <Link
-                                to='/sign-up'
-                                className='nav-links-mobile'
-                                onClick={closeMobileMenu}>Sign Up</Link>
+                                onClick={closeMobileMenu}>SIGN OUT</Link>
                         </li>
                     </ul>
                 </div>
