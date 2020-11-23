@@ -14,28 +14,28 @@ db.once('open', function () {
 //Schemas
 let resturantSchema = mongoose.Schema({
     resturantName: String,
-    resturantType: { type: Array },
+    resturantCategory: { type: Array },
     resturantLocation: String,
     resturantPhon: String,
     resturantImg: String,
-    resturantRate: { type: Array },
-
-
+    resturantFeedback: { type: Array },
+    resturantRate: Number
 })
+
 let userSchema = mongoose.Schema({
     id: { type: Number, unique: true, sparse: true },
     userName: String,
     userMail: String,
     userPass: String,
     userNum: String,
-    trips: [String],
+    favoriteRes: [String],
+    feedBack: { type: Array },
     userimage: String,
-    newsLetter: Boolean
 })
 
-let trips = mongoose.model("resturInfo", resturantSchema);
+let resturants = mongoose.model("resturInfo", resturantSchema);
 let users = mongoose.model("UserInfo", userSchema);
 
 
 module.exports.users = users
-module.exports.trips = trips
+module.exports.resturants = resturants
