@@ -1,30 +1,14 @@
-import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import './A-Style.css';
-import { Button } from './Button';
 
-
+import React, { useState } from 'react';
+// 
 function Navbar() {
     const [click, setClick] = useState(false);
-    const [button, setButton] = useState(true);
-
     const handleClick = () => setClick(!click);
-
     const closeMobileMenu = () => setClick(false);
+    //pop up functions
 
-    const showButton = () => {
-        if (window.innerWidth <= 960) {
-            setButton(false);
-        } else {
-            setButton(true);
-        }
-    };
-
-    useEffect(() => {
-        showButton();
-    }, []);
-
-    window.addEventListener('resize', showButton);
 
     return (
         <>
@@ -38,23 +22,16 @@ function Navbar() {
                     </div>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
-                            <Link to='/restaurants' className='nav-links' onClick={closeMobileMenu}>Restaurants</Link>
+                            <Link to='/restaurants' className='nav-links' onClick={closeMobileMenu}>RESTURANTS</Link>
                         </li>
-                        <li>
-                            <Link
-                                to='/sign-up'
-                                className='nav-links-mobile'
-                                onClick={closeMobileMenu}>Sign In</Link>
+                        <li className='nav-item'>
+                            <Link to='/user' className='nav-links' onClick={closeMobileMenu}>USER</Link>
+
                         </li>
-                        <li>
-                            <Link
-                                to='/sign-up'
-                                className='nav-links-mobile'
-                                onClick={closeMobileMenu}>Sign Up</Link>
+                        <li className='nav-item'>
+                            <Link className='nav-links' onClick={closeMobileMenu}>SIGN OUT</Link>
                         </li>
                     </ul>
-                    {button && <Button buttonStyle='btn--outline'>SIGN IN</Button>}
-                    {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
                 </div>
             </nav>
         </>

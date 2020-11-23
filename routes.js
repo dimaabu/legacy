@@ -19,4 +19,11 @@ routers.post('/search', restController.searchrest);
 routers.post('/get', restController.getrest);
 
 
+const feedback = require('./Controller/feedBackController')
+routers.post('/getcat', feedback.getbycat);
+
+
+
+
+
 module.exports = routers;

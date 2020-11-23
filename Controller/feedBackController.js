@@ -50,6 +50,13 @@ exports.addFeedBack = (req, res) => {
     })
 }
 
-{
-    find({ category: { $all: ["see Food"] } }).pretty()
+exports.getbycat = (req, res) => {
+    ResturantModel.find({ categoty: { $all: ["Sea Food"] } }, (err, data) => {
+        if (err)
+            return res.status(400).send('error')
+
+        if (!data)
+            return res.status(402).send('not found category')
+        return res.status(200).send(data)
+    })
 }
