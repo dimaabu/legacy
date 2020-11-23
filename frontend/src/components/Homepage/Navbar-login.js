@@ -20,15 +20,15 @@ function Navbar() {
     //pop up functions
     const [showModal, setShowModal] = useState(false);
     // to open the pop up (toggle between open and close)
-      const openModal = () => {
+    const openModal = () => {
         setShowModal(prev => !prev);
-      };
-         //pop up functions
+    };
+    //pop up functions
     const [showModal2, setShowModal2] = useState(false);
     // to open the pop up (toggle between open and close)
-      const openModal2 = () => {
+    const openModal2 = () => {
         setShowModal2(prev => !prev);
-      };
+    };
 
     return (
         <>
@@ -45,17 +45,17 @@ function Navbar() {
                             <Link to='/restaurants' className='nav-links' onClick={closeMobileMenu}>RESTURANTS</Link>
                         </li>
                         <li className='nav-item'>
-                            <Link  className='nav-links' onClick={openModal}>SIGN IN</Link>
+                            <Link className='nav-links' onClick={openModal}>SIGN IN</Link>
                             <Container>
-                            <Modal  className='containerPop'showModal={showModal} setShowModal={setShowModal} />
+                                <Modal className='containerPop' showModal={showModal} setShowModal={setShowModal} />
                             </Container>
                         </li>
                         <li className='nav-item'>
-                            <Link  className='nav-links' onClick={openModal2}>SIGN UP</Link>
+                            <Link className='nav-links' onClick={openModal2}>SIGN UP</Link>
                             <Container>
-                            <Modal2 showModal={showModal2} setShowModal={setShowModal2} />
+                                <Modal2 showModal={showModal2} setShowModal={setShowModal2} />
                             </Container>
-                        <Link  className='nav-links' onClick={closeMobileMenu}>SIGN UP</Link>
+                            <Link className='nav-links' onClick={closeMobileMenu}>SIGN UP</Link>
                         </li>
                     </ul>
                 </div>
