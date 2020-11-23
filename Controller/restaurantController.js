@@ -1,5 +1,19 @@
-const restaurants = require('../DataModel').resturants
+const Restaurant = require('../DataModel').resturants
 const restData = require('../restdata/restaurant.json')
+
+
+exports.fillrest = (req, res) => {
+    for (let index = 0; index < restData.length; index++) {
+        var rest = new Restaurant(restData[index])
+        rest.save((err, rest1) => {
+            if (err)
+                console.log(err)
+            console.log(rest1)
+        })
+    }
+    res.send(restData)
+
+}
 
 exports.allrest = (req, res) => {
     restaurants.find({}, (err, trips) => {
@@ -13,25 +27,12 @@ exports.searchrest = (req, res) => {
         if (err)
             res.send(err);
         else {
-            if(!onerest){
+            if (!onerest) {
                 return res.status(401).send("no rest founded")
             }
             return res.status(200).send(onerest);
         }
     });
-}
-exports.fillrest = (req, res) => {
-
-    for (let index = 0; index < restData.length; index++) {
-        var rest = new rests(restData[index])
-        rest.save((err, rest1) => {
-            if (err)
-                console.log(err)
-            console.log(rest1)
-        })
-    }
-    res.send(restData)
-
 }
 exports.getrest = (req, res) => {
     console.log(req.body)
