@@ -3,6 +3,7 @@ import Navbar from './components/Homepage/Navbar';
 import Footer from './components/Homepage/Footer';
 import Home from './components/Homepage/Home'
 import $ from 'jquery'
+import Categories from './components/Homepage/Categories'
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
@@ -144,6 +145,7 @@ class App extends React.Component {
             <Route path="/user" exact render={(props) => <Profile userid={this.state.userid} />}
             />
             <Route path="/trip" exact component={Trip} />
+            <Route path="/Category" exact component={Categories} />
             <Route path="/mytrip" exact component={MyTrip} />
           </Switch>
           <Footer />
