@@ -12,10 +12,11 @@ routers.get('/checkuser', auth, (req, res) => {
 routers.post('/getuserinfo', userController.getuserinfo)
 
 //Restaurant Controller
-const RestaurantController = require('./Controller/restaurantController')
-
-routers.post('/filldata', RestaurantController.fillrest)
-
+const restController = require('./Controller/restaurantController')
+routers.post('/filldata', restController.fillrest)
+routers.post('/rest', restController.allrest);
+routers.post('/search', restController.searchrest);
+routers.post('/get', restController.getrest);
 
 
 module.exports = routers;
