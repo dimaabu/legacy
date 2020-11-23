@@ -24,22 +24,16 @@ class Cards extends React.Component {
                 <div className='cards__container'>
                     <div className="cards__wrapper">
                         <ul className="cards__items">
-                            {/* EDIT HERE */}
                             {this.props.testtrips.slice(0, 3).map((trip) =>
                                 <Carditem
                                     src={trip.image[0][0]}
-                                    // text={this.props.trip[0].explor}
                                     label={trip.name}
                                     text={trip.explore}
-                                    // hello={this.props.lable1}
                                     path='/trip'
-                                    // getup={this.props.getup}
                                     trip={trip}
                                     paymentCheck={this.props.paymentCheck}
                                     userid={this.props.userid}
-
                                 />)}
-
                         </ul>
                         <ul className="cards__items">
                             {this.props.testtrips.slice(3, 5).map((trip) =>

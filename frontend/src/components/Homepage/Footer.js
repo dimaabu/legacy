@@ -1,29 +1,11 @@
 import React from 'react';
 import './A-Style.css';
-import { Button } from './Button';
 import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
         <div className='footer-container'>
             <div className='center'>
-                <section className='footer-subscription'>
-                    <p className='footer-subscription-heading'>
-                        Join our newsletter to receive the new updates</p>
-                    <p className='footer-subscription-text'>
-                        You can unsubscribe at any time.</p>
-                    <div className='input-areas'>
-                        <form>
-                            <input style={{ "width": '60%' }}
-                                className='footer-input'
-                                name='email'
-                                type='email'
-                                placeholder='Your Email'
-                            />
-                            <Button buttonStyle='btn--outline'>Subscribe</Button>
-                        </form>
-                    </div>
-                </section>
                 <div class='footer-links center'>
                     <div className='footer-link-wrapper'>
                         <div class='footer-link-items'>
@@ -48,10 +30,10 @@ function Footer() {
                     <div class='social-media-wrap'>
                         <div class='footer-logo'>
                             <Link to='/' className='social-logo'>
-                                LAFLEFNE
+                            FoodDose
                         </Link>
                         </div>
-                        <small class='website-rights'>LAFLEFNE © 2020</small>
+                        <small class='website-rights'>FoodDose © 2020</small>
                         <div class='social-icons'>
                             <Link
                                 class='social-icon-link facebook'
