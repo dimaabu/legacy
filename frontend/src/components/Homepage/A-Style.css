@@ -1,3 +1,10 @@
+.containerPop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%
+}
 /* ////////////////////////////////////////////////// */
 /* Footer.css */
 .footer-container {
@@ -310,16 +317,31 @@ video {
     /* so it does not cover other components */
     z-index: -1;
   }
-  
+  /* .slidehomepage{
+    background-color:!important rgba(241, 239, 239, 0.664);
+    /* opacity: 0.5; */
+   
+  .imageslider{
+    
+      /* padding: 60px; */
+      text-align: center;
+      background: #1abc9c;
+      color: white;
+      font-size: 30px;
+      background-image: url('https://post.healthline.com/wp-content/uploads/2020/09/health-benefits-of-eggs-732x549-thumbnail.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
   .section-container {
     /* to add a picture insted of video */
-    background: url('https://unctad.org/sites/default/files/2020-10/2020-09-08_Palestine-report_1200x675.jpg') center center/cover no-repeat;
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
     object-fit: contain;
   }
@@ -381,7 +403,7 @@ video {
 /* Navbar.css */
 .navbar {
     /* 82, 10, 41 */
-      background: linear-gradient(90deg, rgb(82, 10, 41) 0%, rgb(82, 10, 41) 100%);
+      background:#ff9900;
       height: 80px;
       display: flex;
       justify-content: center;
@@ -548,48 +570,3 @@ video {
     }
     
 /* ////////////////////////////////////////////////// */
-/* Button.css */
-:root {
-    --primary: #fff;
-  }
-  
-  .btn {
-    padding: 8px 20px;
-    border-radius: 2px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .btn--primary {
-    background-color: var(--primary);
-    color: #242424;
-    border: 1px solid var(--primary);
-  }
-  
-  .btn--outline {
-    background-color: transparent;
-    color: #fff;
-    padding: 8px 20px;
-    border: 1px solid var(--primary);
-    transition: all 0.3s ease-out;
-  }
-  
-  .btn--medium {
-    padding: 8px 20px;
-    font-size: 18px;
-  }
-  
-  .btn--large {
-    padding: 12px 26px;
-    font-size: 20px;
-  }
-  
-  .btn--large:hover,
-  .btn--medium:hover {
-    transition: all 0.3s ease-out;
-    background: #FDEDF4;
-    color: #242424;
-    transition: all 0.3s ease-out;
-  }
-  /* ////////////////////////////////////////////////// */

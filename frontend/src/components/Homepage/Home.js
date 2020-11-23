@@ -17,7 +17,7 @@ class Home extends React.Component {
     render() {
         return (
             <>
-                <Section />
+                <Section/>
                 <Cards lable1={this.props.hello} testtrips={this.props.testtrips} userid={this.props.userid} getup={this.props.getup} trip={this.props.trip} paymentCheck={this.props.paymentCheck} />
             </>
         )
