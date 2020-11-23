@@ -52,7 +52,6 @@ class App extends React.Component {
       url: "/gettrips",
       success: (res) => {
         for (var i in res) {
-          // console.log(res[i])
           alltrips.push(res[i])
 
         }
