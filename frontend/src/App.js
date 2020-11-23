@@ -4,6 +4,8 @@ import Footer from './components/Homepage/Footer';
 import Home from './components/Homepage/Home'
 import $ from 'jquery'
 import Categories from './components/Homepage/Categories'
+import Restaurants from './components/restaurant/restaurants'
+import OneRest from './components/restaurant/onerestaurant'
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
@@ -146,6 +148,9 @@ class App extends React.Component {
             />
             <Route path="/trip" exact component={Trip} />
             <Route path="/Category" exact component={Categories} />
+            <Route path="/Category/:category" exact component={Restaurants} />
+            <Route path="/Category/:category/:rest" exact component={OneRest} />
+
             <Route path="/mytrip" exact component={MyTrip} />
           </Switch>
           <Footer />
