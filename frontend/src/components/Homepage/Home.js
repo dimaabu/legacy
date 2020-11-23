@@ -2,7 +2,6 @@ import React from 'react';
 import '../../../src/App.css';
 import './A-Style.css';
 import Section from './Section';
-import AboutUs from './AboutUs';
 import Cards from './HomeCards';
 
 class Home extends React.Component {
@@ -19,7 +18,6 @@ class Home extends React.Component {
         return (
             <>
                 <Section />
-                <AboutUs />
                 <Cards lable1={this.props.hello} testtrips={this.props.testtrips} userid={this.props.userid} getup={this.props.getup} trip={this.props.trip} paymentCheck={this.props.paymentCheck} />
             </>
         )

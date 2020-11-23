@@ -1,14 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-.qoute {
-  font-family: 'Dancing Script', cursive;
-  color:#2D1214;
-}
-
 /* ////////////////////////////////////////////////// */
 /* Footer.css */
 .footer-container {
   background-color: #242424;
-  padding: 4rem 0 2rem 0;
+  padding: .01rem 0 .01rem 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
