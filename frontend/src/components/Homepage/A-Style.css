@@ -570,3 +570,15 @@ video {
     }
     
 /* ////////////////////////////////////////////////// */
+
+/* caregory img style */
+.imgstyle {
+  object-fit: cover;
+    object-position: 50% 50%;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 30px ;
+    margin-bottom: 18px;
+
+}
+

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import './A-Style.css';
-import $ from 'jquery';
+import $ from 'jquery'
 import React, { useState } from 'react';
 // 
 function Navbar() {
@@ -22,7 +22,7 @@ function Navbar() {
                     </div>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
-                            <Link to='/restaurants' className='nav-links' onClick={closeMobileMenu}>RESTURANTS</Link>
+                            <Link to='/Category' className='nav-links' onClick={closeMobileMenu}>RESTURANTS</Link>
                         </li>
                         <li className='nav-item'>
                             <Link to='/user' className='nav-links' onClick={closeMobileMenu}>USER</Link>
@@ -30,18 +30,21 @@ function Navbar() {
                         </li>
                         <li className='nav-item'>
                             <Link className='nav-links' onClick={() => {
-                    $.ajax({
-                        method: 'POST',
-                        url: '/logout',
-                        success: (res) => {
-                            console.log('see you another time')
-                            window.location.href = "/"
-                        },
-                        error: (err) => {
-                            console.log(err)
-                        }
-                    })
-                }}>SIGN OUT</Link>
+                                $.ajax({
+                                    method: 'POST',
+                                    url: '/logout',
+                                    success: (res) => {
+                                        console.log('see you another time')
+                                        window.location.href = "/"
+                                    },
+                                    error: (err) => {
+                                        console.log(err)
+
+                                    }
+
+
+                                })
+                            }}>SIGN OUT</Link>
                         </li>
                     </ul>
                 </div>
