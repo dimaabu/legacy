@@ -1,30 +1,34 @@
-import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import './A-Style.css';
-import { Button } from './Button';
 
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { Modal } from './SignInModal';
+import { Modal2 } from './SignUpModal';
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
 
 function Navbar() {
     const [click, setClick] = useState(false);
-    const [button, setButton] = useState(true);
-
     const handleClick = () => setClick(!click);
-
     const closeMobileMenu = () => setClick(false);
-
-    const showButton = () => {
-        if (window.innerWidth <= 960) {
-            setButton(false);
-        } else {
-            setButton(true);
-        }
+    //pop up functions
+    const [showModal, setShowModal] = useState(false);
+    // to open the pop up (toggle between open and close)
+    const openModal = () => {
+        setShowModal(prev => !prev);
     };
-
-    useEffect(() => {
-        showButton();
-    }, []);
-
-    window.addEventListener('resize', showButton);
+    //pop up functions
+    const [showModal2, setShowModal2] = useState(false);
+    // to open the pop up (toggle between open and close)
+    const openModal2 = () => {
+        setShowModal2(prev => !prev);
+    };
 
     return (
         <>
@@ -38,26 +42,22 @@ function Navbar() {
                     </div>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
-                            <Link to='/restaurants' className='nav-links' onClick={closeMobileMenu}>Restaurants</Link>
+                            <Link to='/restaurants' className='nav-links' onClick={closeMobileMenu}>RESTURANTS</Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/user' className='nav-links' onClick={closeMobileMenu}>user</Link>
+                            <Link className='nav-links' onClick={openModal}>SIGN IN</Link>
+                            <Container>
+                                <Modal className='containerPop' showModal={showModal} setShowModal={setShowModal} />
+                            </Container>
                         </li>
-                        <li>
-                            <Link
-                                to='/sign-up'
-                                className='nav-links-mobile'
-                                onClick={closeMobileMenu}>Sign In</Link>
-                        </li>
-                        <li>
-                            <Link
-                                to='/sign-up'
-                                className='nav-links-mobile'
-                                onClick={closeMobileMenu}>Sign Up</Link>
+                        <li className='nav-item'>
+                            <Link className='nav-links' onClick={openModal2}>SIGN UP</Link>
+                            <Container>
+                                <Modal2 showModal={showModal2} setShowModal={setShowModal2} />
+                            </Container>
+                            <Link className='nav-links' onClick={closeMobileMenu}>SIGN UP</Link>
                         </li>
                     </ul>
-                    {button && <Button buttonStyle='btn--outline'>SIGN IN</Button>}
-                    {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
                 </div>
             </nav>
         </>
