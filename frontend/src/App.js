@@ -3,6 +3,7 @@ import Navbar from './components/Homepage/Navbar';
 import Footer from './components/Homepage/Footer';
 import Home from './components/Homepage/Home'
 import $ from 'jquery'
+import Categories from './components/Homepage/Categories'
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
@@ -118,14 +119,14 @@ class App extends React.Component {
         render={(props) => <Login toggleuser={this.changeUserStatus} toggleLogin={this.changeLogInStatus} hello='hello' />}
       />
     }
-    if (this.state.tokenin !== `authToken=` && this.state.tokenin !== '') {
-      console.log('token')
+    // if (this.state.tokenin !== `authToken=` && this.state.tokenin !== '') {
+    //   console.log('token')
       nav = <Navbar2></Navbar2>
-    }
-    else {
-      console.log('noo token')
-      nav = <Navbar></Navbar>
-    }
+    // }
+    // else {
+    //   console.log('noo token')
+      // nav = <Navbar></Navbar>
+    // }
     return (
       <>
         <Router>
@@ -144,6 +145,7 @@ class App extends React.Component {
             <Route path="/user" exact render={(props) => <Profile userid={this.state.userid} />}
             />
             <Route path="/trip" exact component={Trip} />
+            <Route path="/Category" exact component={Categories} />
             <Route path="/mytrip" exact component={MyTrip} />
           </Switch>
           <Footer />
