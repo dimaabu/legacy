@@ -34,7 +34,11 @@ class App extends React.Component {
     this.paymentCheck = this.paymentCheck.bind(this)
     this.getTrips = this.getTrips.bind(this)
     this.changeUserStatus = this.changeUserStatus.bind(this)
+    this.test = this.test.bind(this)
 
+  }
+  test() {
+    console.log('does it work? really ')
   }
   changeLogInStatus() {
     this.setState({
@@ -123,7 +127,7 @@ class App extends React.Component {
     }
     if (this.state.tokenin !== `authToken=` && this.state.tokenin !== '') {
       console.log('token')
-      nav = <Navbar2></Navbar2>
+      nav = <Navbar2 hello="hello bro" test={this.test}></Navbar2>
     }
     else {
       console.log('noo token')

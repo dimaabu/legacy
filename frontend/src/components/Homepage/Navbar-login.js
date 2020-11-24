@@ -13,7 +13,7 @@ const Container = styled.div`
   height: 100vh;
 `;
 
-function Navbar() {
+function Navbar(props) {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
@@ -29,7 +29,6 @@ function Navbar() {
     const openModal2 = () => {
         setShowModal2(prev => !prev);
     };
-
     return (
         <>
             <nav className='navbar'>
@@ -53,7 +52,7 @@ function Navbar() {
                         <li className='nav-item'>
                             <Link className='nav-links' onClick={openModal2}>SIGN UP</Link>
                             <Container>
-                                <Modal2 showModal={showModal2} setShowModal={setShowModal2} />
+                                <Modal2 showModal={showModal2} setShowModal={setShowModal2} test={props.test} hello={props.hello} />
                             </Container>
                             <Link className='nav-links' onClick={closeMobileMenu}>SIGN UP</Link>
                         </li>

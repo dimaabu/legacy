@@ -17,12 +17,15 @@ class Categories extends React.Component {
     console.log(Category[0].Name)
     return (
       <>
-        <div className="d-flex flex-wrap justify-content-around catdiv"  >
+        <div className="d-flex flex-wrap justify-content-around catdiv" style={{
+          "marginBottom": '50px', marginTop: "18px"
+        }}  >
           {
             Category.slice(0, 4).map((item, i) =>
-              <div style={{ 'text-align': 'center' }} key={i} > <Link to={{
+              <div style={{ 'text-align': 'center', marginTop: '45px' }} key={i} > <Link to={{
                 pathname: `/Category/${item.Name}`,
-                state: { whichcart: item.Name }
+                state: { whichcat: item.Name }
+
               }}><img src={item.Image} style={{ 'cursor': 'pointer' }} alt="" className="imgstyle"
                 whichcat={item.Name}></img></Link> <p className='fontcat'>{item.Name} </p>
               </div>)}

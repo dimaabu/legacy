@@ -41,9 +41,9 @@ class Restaurants extends React.Component {
 
         console.log(cat)
 
-        return (<div className="d-flex flex-wrap justify-content-around catdiv"  >
+        return (<div className="d-flex flex-wrap justify-content-around restsdiv"  >
             {
-                this.state.restaurants.slice(0, 4).map((item, i) =>
+                this.state.restaurants.map((item, i) =>
                     <div style={{ 'text-align': 'center' }} key={i} > <Link to={{
                         pathname: `/Category/${cat}/${item.Name}`,
                         state: { whichcart: item.Name }

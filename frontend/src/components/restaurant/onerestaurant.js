@@ -1,6 +1,8 @@
 import React from "react";
 import $ from 'jquery'
 // import { Link } from 'react-router-dom';
+import './rest.css'
+
 
 
 class Restaurants extends React.Component {
@@ -23,7 +25,9 @@ class Restaurants extends React.Component {
             data: { cat: cat },
             success: (res) => {
                 this.setState({
-                    restaurants: res
+                    restaurants: res,
+                    checked: false
+
                 })
 
             },
@@ -35,10 +39,11 @@ class Restaurants extends React.Component {
     }
 
 
-
     render() {
-        return (<div>hello</div>)
 
+        return (< div className='restdiv'><div>hello</div>
+
+        </ div>)
     }
 
 }

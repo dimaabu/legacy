@@ -593,4 +593,10 @@ video {
   font-weight: bolder;
 font-size: larger;
 }
+footer {
+  clear: both;
+  position: relative;
+  height: 200px;
+  margin-top: -200px;
+}
 
