@@ -7,7 +7,8 @@ const userController = require('./Controller/UserController')
 routers.post('/signup', userController.signUpUser);
 routers.post('/login', userController.loginUser);
 routers.post('/logout', userController.userlogout)
-routers.post('/', (req, res) =>{
+routers.post('/', (req, res) => {
+    console.log(req.body.help)
     res.send(req.body)
 })
 routers.get('/checkuser', auth, (req, res) => {
@@ -28,7 +29,7 @@ routers.post('/getcat', feedback.getbycat);
 
 const searchController = require('./Controller/searchController')
 
-routers.post('/searchrest',searchController.searchrest)
+routers.post('/searchrest', searchController.searchrest)
 
 
 
