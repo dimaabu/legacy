@@ -85,7 +85,7 @@ class Profile extends React.Component {
 
     }
     else {
-      cards = <div>No Booked Trips Yet</div>
+      cards = <div>No Booked meal Yet</div>
     }
     return (
       <div className="imgdiv">
@@ -105,15 +105,15 @@ class Profile extends React.Component {
             <br></br>
             <div className='textContainer' >
               <div>
-                <h4 className="text">Name</h4>
+                <h4 className="text">resturant</h4>
                 <h6 className="text1">{this.props.userid.userName}</h6>
               </div>
               <div>
-                <h4 className="text">Email</h4>
+                <h4 className="text">meal</h4>
                 <h6 className="text1">{this.props.userid.userMail}</h6>
               </div>
               <div>
-                <h4 className="text">Phone Number</h4>
+                <h4 className="text">price</h4>
                 <h6 className="text1">{this.props.userid.userNum}</h6>
               </div>
             </div>
@@ -124,7 +124,7 @@ class Profile extends React.Component {
                 <br></br>
                 <br></br>
                 <div className="textContainer">
-                  <h4 className="text">Booked Trips</h4>
+                  <h4 className="text">ask for a meal</h4>
                 </div>
                 <br></br>
                 {cards}
