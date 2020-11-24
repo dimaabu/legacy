@@ -117,14 +117,14 @@ class App extends React.Component {
         render={(props) => <Login toggleuser={this.changeUserStatus} toggleLogin={this.changeLogInStatus} hello='hello' />}
       />
     }
-    if (this.state.tokenin !== `authToken=` && this.state.tokenin !== '') {
-      console.log('token')
-      nav = <Navbar2></Navbar2>
-    }
-    else {
-      console.log('noo token')
+    // if (this.state.tokenin !== `authToken=` && this.state.tokenin !== '') {
+    //   console.log('token')
+      // nav = <Navbar2></Navbar2>
+    // }
+    // else {
+    //   console.log('noo token')
       nav = <Navbar></Navbar>
-    }
+    // }
     return (
       <>
         <Router>
@@ -137,7 +137,7 @@ class App extends React.Component {
             />
             <Route
               path="/trips"
-              render={(props) => <Trips userid={this.state.userid} getup={this.getup} testtrips={this.state.testtrips} paymentCheck={this.paymentCheck} lable1={this.state.hello} trip={this.state.thetrip} />}
+              render={(props) => <Trips userid={this.state.userid} getup={this.getup} testtrips={this.state.testtrips}  lable1={this.state.hello} trip={this.state.thetrip} />}
             />
             <Route path="/sign-up" exact component={Signup} />
             <Route path="/user" exact render={(props) => <Profile userid={this.state.userid} />}

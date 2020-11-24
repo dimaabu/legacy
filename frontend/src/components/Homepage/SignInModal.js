@@ -1,9 +1,10 @@
 import React, { useRef, useEffect, useCallback } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
-import { MdClose } from 'react-icons/md';
+import { MdClose, MdSignalCellularConnectedNoInternet0Bar } from 'react-icons/md';
+import $ from 'jquery'
 
-//pop up Styling 
+//pop up Styling///////////////////////////// 
 const Background = styled.div`
   width: 1000%;
   height: 100%;
@@ -60,10 +61,10 @@ const CloseModalButton = styled(MdClose)`
   padding: 0;
   z-index: 10;
 `;
-
+////////////////////////////////////
 export const Modal = ({ showModal, setShowModal }) => {
+  //pop up functionality 
   const modalRef = useRef();
-
   const animation = useSpring({
     config: {
       duration: 250
@@ -71,13 +72,11 @@ export const Modal = ({ showModal, setShowModal }) => {
     opacity: showModal ? 1 : 0,
     transform: showModal ? `translateY(0%)` : `translateY(-100%)`
   });
-
   const closeModal = e => {
     if (modalRef.current === e.target) {
       setShowModal(false);
     }
   };
-
   const keyPress = useCallback(
     e => {
       if (e.key === 'Escape' && showModal) {
@@ -87,7 +86,6 @@ export const Modal = ({ showModal, setShowModal }) => {
     },
     [setShowModal, showModal]
   );
-
   useEffect(
     () => {
       document.addEventListener('keydown', keyPress);
@@ -95,6 +93,10 @@ export const Modal = ({ showModal, setShowModal }) => {
     },
     [keyPress]
   );
+  
+  const signIn = () => {
+
+  }
 
   return (
     <>
