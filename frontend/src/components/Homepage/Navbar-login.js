@@ -13,7 +13,7 @@ const Container = styled.div`
   height: 100vh;
 `;
 
-function Navbar() {
+function Navbar(props) {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
@@ -29,33 +29,32 @@ function Navbar() {
     const openModal2 = () => {
         setShowModal2(prev => !prev);
     };
-
     return (
         <>
             <nav className='navbar'>
                 <div className='navbar-container'>
                     <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                        <h3>FoodDose</h3>
+                        <h3 className='fontKaushan'>FoodDose</h3>
                     </Link>
                     <div className='menu-icon' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                     </div>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
-                            <Link to='/Category' className='nav-links' onClick={closeMobileMenu}>RESTURANTS</Link>
+                            <Link to='/Category' className='nav-links fontvav' onClick={closeMobileMenu}>RESTURANTS</Link>
                         </li>
                         <li className='nav-item'>
-                            <Link className='nav-links' onClick={openModal}>SIGN IN</Link>
+                            <Link className='nav-links fontvav' onClick={openModal}>SIGN IN</Link>
                             <Container>
                                 <Modal className='containerPop' showModal={showModal} setShowModal={setShowModal} />
                             </Container>
                         </li>
                         <li className='nav-item'>
-                            <Link className='nav-links' onClick={openModal2}>SIGN UP</Link>
+                            <Link className='nav-links fontvav' onClick={openModal2}>SIGN UP</Link>
                             <Container>
-                                <Modal2 showModal={showModal2} setShowModal={setShowModal2} />
+                                <Modal2 showModal={showModal2} setShowModal={setShowModal2} test={props.test} hello={props.hello} />
                             </Container>
-                            <Link className='nav-links' onClick={closeMobileMenu}>SIGN UP</Link>
+                            <Link className='nav-links fontvav' onClick={closeMobileMenu}>SIGN UP</Link>
                         </li>
                     </ul>
                 </div>
