@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useCallback } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
-import { MdClose, MdSignalCellularConnectedNoInternet0Bar } from 'react-icons/md';
+import { MdClose } from 'react-icons/md';
 import $ from 'jquery'
 
 //pop up Styling///////////////////////////// 
@@ -16,8 +16,8 @@ const Background = styled.div`
 `;
 
 const ModalWrapper = styled.div`
-  width: 400px;
-  height: 500px;
+  width: 350px;
+  height: 450px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   background: #fff;
   color: #000;
@@ -65,6 +65,8 @@ const CloseModalButton = styled(MdClose)`
 export const Modal = ({ showModal, setShowModal }) => {
   //pop up functionality 
   const modalRef = useRef();
+  var passInput = React.createRef();
+  var emailInput = React.createRef();
   const animation = useSpring({
     config: {
       duration: 250
@@ -94,9 +96,6 @@ export const Modal = ({ showModal, setShowModal }) => {
     [keyPress]
   );
   
-  const signIn = () => {
-
-  }
 
   return (
     <>
@@ -105,22 +104,51 @@ export const Modal = ({ showModal, setShowModal }) => {
           <animated.div style={animation}>
             <ModalWrapper showModal={showModal}>
               <ModalContent>
-              <form className="center-form">
-                <h3>Sign In</h3>
-                <div className="form-group">
+                <form className="center-form">
+                  <h3>Sign In</h3>
+                  <div className="form-group">
                     <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
-                </div>
-                <div className="form-group">
+                    <input type="email" ref={emailInput} className="form-control" placeholder="Enter email" />
+                  </div>
+                  <div className="form-group">
                     <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
-                </div>
-
-                <div className="form-group">
-                </div>
-
-                <button type="submit" className="btn btn-primary btn-block">Submit</button>
-            </form>
+                    <input type="password" ref={passInput} className="form-control" placeholder="Enter password" />
+                  </div>
+                  <small id="logPass"></small>
+                  <div className="form-group">
+                  </div>
+                  <button type="button" className="btn btn-primary btn-block" onClick={() => {
+                    var password = passInput.current.value
+                    var email = emailInput.current.value
+                    var data = {
+                      userPass: password,
+                      userMail: email
+                    }
+                    $.ajax({
+                      type: "POST",
+                      url: "/login",
+                      data: data,
+                      success: (res) => {
+                        window.location.href = "/"
+                      },
+                      error: function (error) {
+                        if (error.status === 410) {
+                          //alert('Empty data')
+                          document.getElementById("logPass").innerHTML = "<div class='alert alert-danger' role='alert'> You have to enter your email</div>"
+                        }
+                        if (error.status === 404) {
+                          document.getElementById("logPass").innerHTML = "<div class='alert alert-danger' role='alert'> Invaild Username</div>"
+                          //alert('user not existed')
+                          console.log(error.responseText)
+                        }
+                        if (error.status === 400) {
+                          //alert('wrong password')
+                          document.getElementById("logPass").innerHTML = "<div class='alert alert-danger' role='alert'> Wrong Password</div>"
+                        }
+                      }
+                    })
+                  }}>Sign In</button>
+                </form>
               </ModalContent>
               <CloseModalButton
                 aria-label='Close modal'

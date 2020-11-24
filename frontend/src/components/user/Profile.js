@@ -32,7 +32,6 @@ class Profile extends React.Component {
     }
     var array = []
     if (this.props.userid.trips) {
-      // console.log(this.props.userid.trips)
       var mytrips = this.props.userid.trips
       for (var i in mytrips) {
         $.ajax({
@@ -55,7 +54,6 @@ class Profile extends React.Component {
   }
   componentWillMount() {
     document.documentElement.scrollTop = 0;
-    // $.get('/getuserinfo', { data: this.props.userid })
 
   }
   render() {
@@ -109,15 +107,14 @@ class Profile extends React.Component {
           <br></br>
           <br></br>
           <br></br>
-          <br></br>
                <div>
                   <h4 className="text1">Name</h4>
-                  {/* <h6 className="text1">{this.props.userid.userName}</h6> */}
+                  <h6 className="text1">{this.props.userid.userName}</h6>
                </div>
                <br></br>
                <div>
                   <h4 className="text1">Email</h4>
-                  {/* <h6 className="text1">{this.props.userid.userMail}</h6> */}
+                  <h6 className="text1">{this.props.userid.userMail}</h6>
               </div>
          </div>
        </div>

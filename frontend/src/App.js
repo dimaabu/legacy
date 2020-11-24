@@ -3,6 +3,9 @@ import Navbar from './components/Homepage/Navbar';
 import Footer from './components/Homepage/Footer';
 import Home from './components/Homepage/Home'
 import $ from 'jquery'
+import Categories from './components/Homepage/Categories'
+import Restaurants from './components/restaurant/restaurants'
+import OneRest from './components/restaurant/onerestaurant'
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
@@ -12,7 +15,8 @@ import Trip from './components/trips/trips'
 import Signup from './components/user/signup'
 import MyTrip from './components/trips/mytrips'
 import Profile from './components/user/Profile';
-import Navbar2 from './components/Homepage/Navbar-login';
+import Navbarinup from './components/Homepage/Navbar-login';
+import CardResturant from './components/restaurant/cardResturant.js'
 
 
 class App extends React.Component {
@@ -31,8 +35,14 @@ class App extends React.Component {
     this.paymentCheck = this.paymentCheck.bind(this)
     this.getTrips = this.getTrips.bind(this)
     this.changeUserStatus = this.changeUserStatus.bind(this)
+    this.test = this.test.bind(this)
 
   }
+  test(name, email, pass) {
+    // console.log('does it work? really ' + name + " " + pass + " " + email)
+
+  }
+
   changeLogInStatus() {
     this.setState({
       islogin: !this.state.islogin,
@@ -117,14 +127,16 @@ class App extends React.Component {
         render={(props) => <Login toggleuser={this.changeUserStatus} toggleLogin={this.changeLogInStatus} hello='hello' />}
       />
     }
-    // if (this.state.tokenin !== `authToken=` && this.state.tokenin !== '') {
-    //   console.log('token')
-      // nav = <Navbar2></Navbar2>
-    // }
-    // else {
-    //   console.log('noo token')
+    if (this.state.tokenin !== `authToken=` && this.state.tokenin !== '') {
+      console.log('token')
       nav = <Navbar></Navbar>
-    // }
+
+    }
+    else {
+      console.log('noo token')
+      nav = <Navbarinup hello="hello bro" test={this.test}></Navbarinup>
+
+    }
     return (
       <>
         <Router>
@@ -143,6 +155,10 @@ class App extends React.Component {
             <Route path="/user" exact render={(props) => <Profile userid={this.state.userid} />}
             />
             <Route path="/trip" exact component={Trip} />
+            <Route path="/Category" exact component={CardResturant} />
+            <Route path="/Category/:category" exact component={Restaurants} />
+            <Route path="/Category/:category/:rest" exact component={OneRest} />
+
             <Route path="/mytrip" exact component={MyTrip} />
           </Switch>
           <Footer />
@@ -157,3 +173,9 @@ class App extends React.Component {
 
 
 export default App;
+
+
+function validateEmail(email) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
