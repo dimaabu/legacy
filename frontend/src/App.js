@@ -16,7 +16,7 @@ import Signup from './components/user/signup'
 import MyTrip from './components/trips/mytrips'
 import Profile from './components/user/Profile';
 import Navbar2 from './components/Homepage/Navbar-login';
-
+import Feedback from './components/restaurant/feedback';
 
 class App extends React.Component {
   constructor(props) {
@@ -29,6 +29,7 @@ class App extends React.Component {
       testtrips: [],
       userid: ''
     }
+    
     this.changeLogInStatus = this.changeLogInStatus.bind(this)
     this.getup = this.getup.bind(this)
     this.paymentCheck = this.paymentCheck.bind(this)
@@ -152,7 +153,7 @@ class App extends React.Component {
             />
             <Route path="/trip" exact component={Trip} />
             <Route path="/Category" exact component={Categories} />
-            <Route path="/Category/:category" exact component={Restaurants} />
+            <Route path="/Category/:category" exact component={Feedback} />
             <Route path="/Category/:category/:rest" exact component={OneRest} />
 
             <Route path="/mytrip" exact component={MyTrip} />
