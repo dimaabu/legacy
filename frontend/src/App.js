@@ -149,15 +149,16 @@ class App extends React.Component {
             />
             <Route
               path="/trips"
-              render={(props) => <Trips userid={this.state.userid} getup={this.getup} testtrips={this.state.testtrips}  lable1={this.state.hello} trip={this.state.thetrip} />}
+              render={(props) => <Trips userid={this.state.userid} getup={this.getup} testtrips={this.state.testtrips} lable1={this.state.hello} trip={this.state.thetrip} />}
             />
             <Route path="/sign-up" exact component={Signup} />
             <Route path="/user" exact render={(props) => <Profile userid={this.state.userid} />}
             />
             <Route path="/trip" exact component={Trip} />
-            <Route path="/Category" exact component={CardResturant} />
+            <Route path="/Category" exact component={Categories} />
+            <Route path="/restaurant" exact component={CardResturant} />
             <Route path="/Category/:category" exact component={Restaurants} />
-            <Route path="/Category/:category/:rest" exact component={OneRest} />
+            <Route path="/Category/:category/:rest" exact component={CardResturant} />
 
             <Route path="/mytrip" exact component={MyTrip} />
           </Switch>
