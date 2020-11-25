@@ -16,6 +16,8 @@ import Signup from './components/user/signup'
 import MyTrip from './components/trips/mytrips'
 import Profile from './components/user/Profile';
 import Navbarinup from './components/Homepage/Navbar-login';
+import CardResturant from './components/restaurant/cardResturant.js'
+import Feedback from './components/restaurant/feedback'
 
 
 class App extends React.Component {
@@ -61,7 +63,6 @@ class App extends React.Component {
       url: "/gettrips",
       success: (res) => {
         for (var i in res) {
-          // console.log(res[i])
           alltrips.push(res[i])
 
         }
@@ -149,15 +150,16 @@ class App extends React.Component {
             />
             <Route
               path="/trips"
-              render={(props) => <Trips userid={this.state.userid} getup={this.getup} testtrips={this.state.testtrips} paymentCheck={this.paymentCheck} lable1={this.state.hello} trip={this.state.thetrip} />}
+              render={(props) => <Trips userid={this.state.userid} getup={this.getup} testtrips={this.state.testtrips} lable1={this.state.hello} trip={this.state.thetrip} />}
             />
             <Route path="/sign-up" exact component={Signup} />
             <Route path="/user" exact render={(props) => <Profile userid={this.state.userid} />}
             />
             <Route path="/trip" exact component={Trip} />
-            <Route path="/Category" exact component={Categories} />
+            <Route path="/Category" exact component={Feedback} />
+            <Route path="/restaurant" exact component={CardResturant} />
             <Route path="/Category/:category" exact component={Restaurants} />
-            <Route path="/Category/:category/:rest" exact component={OneRest} />
+            <Route path="/Category/:category/:rest" exact component={CardResturant} />
 
             <Route path="/mytrip" exact component={MyTrip} />
           </Switch>
